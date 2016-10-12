@@ -1,0 +1,8 @@
+.idea
+node_modules
+*.log
+.DS_Store
+lib
+coverage
+demos/node/dist
+demos/advanced/dist
