@@ -2394,7 +2394,7 @@ var LiveApi = function () {
             return _this.resolvePromiseForResponse(json);
         };
 
-        this.generatePromiseOrObservable = function (json) {
+        this.generatePromiseForRequest = function (json) {
             var reqId = json.req_id.toString();
 
             return new Promise(function (resolve, reject) {
@@ -2432,7 +2432,7 @@ var LiveApi = function () {
             }
 
             if (typeof json.req_id !== 'undefined') {
-                return this.generatePromiseOrObservable(json).then(function (r) {
+                return this.generatePromiseForRequest(json).then(function (r) {
                     if (!_this2.apiState[callName]) return r;
 
                     // TODO: hackish and need redo, this depends on object identity to works!!!
@@ -2481,7 +2481,7 @@ var LiveApi = function () {
             }
 
             if (typeof json.req_id !== 'undefined') {
-                return _this.generatePromiseOrObservable(json);
+                return _this.generatePromiseForRequest(json);
             }
 
             return undefined;
